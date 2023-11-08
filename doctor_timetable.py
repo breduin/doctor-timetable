@@ -3,8 +3,8 @@
 слотов в списке busy_slots.
 
 Параметры:
-start_day_at - время начала приема
-finish_day_at - время окончания приема
+start_at - время начала приема
+finish_at - время окончания приема
 slot_duration_in_minutes - продолжительность окна приема
 busy_slots - список занятых слотов
 
@@ -28,8 +28,8 @@ def add_times(time_point: time, delta: timedelta) -> time:
 
 
 # Параметры
-start_day_at = time.fromisoformat('09:00')
-finish_day_at = time.fromisoformat('21:00')
+start_at = '09:00'
+finish_at = '21:00'
 slot_duration_in_minutes = 30
 busy_slots = [
     {
@@ -53,7 +53,8 @@ busy_slots = [
     }
 ]
 
-
+start_day_at = time.fromisoformat(start_at)
+finish_day_at = time.fromisoformat(finish_at)
 delta = timedelta(minutes=slot_duration_in_minutes)
 busy_timeformat = [
     {
